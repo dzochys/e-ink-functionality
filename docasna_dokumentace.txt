@@ -1,0 +1,10 @@
+Toto je dokumentace, do které budu psát prvotní procedůry.
+
+16.10.:
+Na Raspberry Pi Zero W jsem nainstaloval Linux distribuci Raspberry Pi OS Lite (32 bit)
+Na základě https://www.waveshare.com/wiki/7.5inch_e-Paper_HAT_(B)_Manual#Introduction jsem si spustil testovací python script a ověřil si, zda displej funguje.
+Skript proběhl bez problémů.
+
+17.10.:
+Založil jsem dokumentaci.
+Připravil jsem si ssh vazbu do githubu podle: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent 
