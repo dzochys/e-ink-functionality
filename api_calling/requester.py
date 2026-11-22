@@ -18,8 +18,8 @@ headers = {
 
 # Filters out for desired parameters.
 parameters = {
-    "names": "Větrník",
-    "limit": 10,
+    "names": "Pohořelec",
+    "limit": 6,
 }
 
 # Gets the data from the url with the given headers and parameters.
@@ -30,4 +30,23 @@ response.raise_for_status()
 data = response.json()
 
 # Prints the data in an easily readable format.
-print(json.dumps(data, indent=2, ensure_ascii=False)) # ensure_ascii=False preserves the czech characters in normal format
+# print(json.dumps(data, indent=2, ensure_ascii=False)) # ensure_ascii=False preserves the czech characters in normal format
+
+# Assigns departures the array of departures
+departures = data.get("departures", [])
+
+#print(json.dumps(departures[2], indent=2, ensure_ascii=False))
+
+for dep in departures:
+    route_info = dep.get("route", {})
+    trip_info = dep.get("trip", {})
+    departure_info = dep.get("departure_timestamp", {})
+
+    line = str(route_info.get("short_name", ""))
+    destination = trip_info.get("headsign", "")
+    departure_time = departure_info.get("scheduled", "")
+
+    print(line + " | " + destination + " | " + departure_time)
+
+
+
