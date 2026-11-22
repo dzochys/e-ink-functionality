@@ -13,3 +13,6 @@ Testovani druheho zarizeni pod stejnym usernamem.
 Sepsal jsem jednoduchy testovací skript, který vykreslí na displaj předem vygenerované obrázky.
 
 Po registraci a získání klíče jsem vyzkousel jsem prvni request Golemio API.
+
+Připravil jsem si git ignore a .env, pro jednoduchou práci s API klíčem.
+Zavolal jsem pro data skrz API pomocí python skriptu a knihovny requests.
