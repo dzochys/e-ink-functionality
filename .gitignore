@@ -1,0 +1,5 @@
+# Ignore generated images.
+*.jpg
+
+# Ignore environment and secret files.
+.env

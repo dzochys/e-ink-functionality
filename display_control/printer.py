@@ -1,7 +1,7 @@
 import sys
 
 import logging
-from testing_config import epd7in5b_V2
+from display_control.testing_config import epd7in5b_V2
 import time
 import traceback
 from PIL import Image

@@ -11,3 +11,5 @@ Připravil jsem si ssh vazbu do githubu podle: https://docs.github.com/en/authen
 Testovani druheho zarizeni pod stejnym usernamem.
 
 Sepsal jsem jednoduchy testovací skript, který vykreslí na displaj předem vygenerované obrázky.
+
+Po registraci a získání klíče jsem vyzkousel jsem prvni request Golemio API.
