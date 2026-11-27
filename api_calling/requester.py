@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 import requests
 import json
+from datetime import datetime
 
 # Loads the variables from .env file into the environment
 load_dotenv()
@@ -18,7 +19,7 @@ headers = {
 
 # Filters out for desired parameters.
 parameters = {
-    "names": "Pohořelec",
+    "names": "Vozovna Střešovice",
     "limit": 6,
 }
 
@@ -41,12 +42,20 @@ for dep in departures:
     route_info = dep.get("route", {})
     trip_info = dep.get("trip", {})
     departure_info = dep.get("departure_timestamp", {})
+    delay_info = dep.get("delay", {})
 
     line = str(route_info.get("short_name", ""))
     destination = trip_info.get("headsign", "")
-    departure_time = departure_info.get("scheduled", "")
+    raw_dep_time = departure_info.get("predicted", "")
+    delay_value = str(delay_info.get("minutes", ""))
 
-    print(line + " | " + destination + " | " + departure_time)
+    dt_dep_time = datetime.fromisoformat(raw_dep_time)
+    final_dep_time = dt_dep_time.strftime("%H:%M")
+
+
+    print(line + " | " + destination + " | " + str(final_dep_time) + " | + " + delay_value)
+
+
 
 
 
